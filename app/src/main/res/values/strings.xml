@@ -43,4 +43,19 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+    
+    <string-array name="arregloAsignaturas">
+        <item>Informatica Movil</item>
+        <item>Sistemas de Radiodeterminacion</item>
+        <item>Dispositivos Electronicos Programables</item>
+        <item>Como ponerse Mamado</item>
+        <item>Como festejar en  españa</item>
+    </string-array>
+    <string-array name="arregloProfesores">
+        <item>Jose Ramon Arias Garcia</item>
+        <item>Dr. Yuri</item>
+        <item>Maestro Toñin</item>
+        <item>Jeff Nippard</item>
+        <item>La Bola</item>
+    </string-array>
 </resources>

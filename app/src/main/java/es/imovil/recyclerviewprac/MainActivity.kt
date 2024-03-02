@@ -9,12 +9,14 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import androidx.recyclerview.widget.LinearLayoutManager
 import es.imovil.recyclerviewprac.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
+    lateinit var adaptador: RecyclerViewAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +25,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setSupportActionBar(binding.toolbar)
+
+        val cursos = Course.createCourseList(resources.getStringArray(R.array.arregloAsignaturas), resources.getStringArray(R.array.arregloProfesores))
+        adaptador = RecyclerViewAdapter(cursos.toMutableList())
+        binding.contenido.recyclerView.adapter = adaptador
+
+        // asignamos un LayoutMAnager al recyclerView
+        binding.contenido.recyclerView.layoutManager = LinearLayoutManager(this)
+// El recycler tiene tamaño fijo, luego activamos esta propiedad
+        binding.contenido.recyclerView.setHasFixedSize(true)
 /*
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         appBarConfiguration = AppBarConfiguration(navController.graph)
