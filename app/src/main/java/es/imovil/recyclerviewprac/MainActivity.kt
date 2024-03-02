@@ -40,8 +40,8 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)*/
 
         binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+            val nuevoCurso = Course("Nueva Materia", "Nuevo Profesor")
+            adaptador.addCourse(nuevoCurso)
         }
     }
 

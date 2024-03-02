@@ -6,9 +6,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import es.imovil.recyclerviewprac.databinding.ItemLayoutBinding
 
-class RecyclerViewAdapter(private val courses: List<Course>) :
+class RecyclerViewAdapter(private val courses: MutableList<Course>) :
     RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
-
+    fun addCourse(course: Course): Unit {
+        courses.add(course)
+        notifyDataSetChanged()
+    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemBinding = ItemLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(itemBinding)
@@ -23,6 +26,7 @@ class RecyclerViewAdapter(private val courses: List<Course>) :
 
     override fun getItemCount() = courses.size
 
+
     class ViewHolder(val itemBinding: ItemLayoutBinding) :
         RecyclerView.ViewHolder(itemBinding.root) {
 
@@ -31,5 +35,8 @@ class RecyclerViewAdapter(private val courses: List<Course>) :
             itemBinding.courseText.text = course.nombre
             itemBinding.teacherText.text = course.profesor
         }
+
     }
+
 }
+
