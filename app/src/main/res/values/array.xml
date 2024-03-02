@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cursos">
+        <item>@string/fis</item>
+        <item>@string/cal</item>
+        <item>@string/bio</item>
+        <item>@string/ele</item>
+        <item>@string/qui</item>
+    </string-array>
+    <string-array name="profesores">
+        <item>@string/alEi</item>
+        <item>@string/isNe</item>
+        <item>@string/chDa</item>
+        <item>@string/niTe</item>
+        <item>@string/dmMe</item>
+    </string-array>
+</resources>
